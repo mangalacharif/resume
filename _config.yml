@@ -1,0 +1,33 @@
+title: "Mangala El Charif"
+description: "Mangala El Charif's official website: a writer, philosopher and a creative"
+github_username: mangalacharif
+facebook: mangala.elcharif
+twitter: mangalacharif
+email: mangalacharif@yahoo.com
+baseurl: "/resume"
+url: "mangalacharif.github.io"
+
+plugins:
+  - jekyll-remote-theme
+  - jemoji
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+remote_theme: tareqdandachi/sandslate
+
+sass:
+  style: compressed
+
+highlighter: rouge
+
+header_pages:
+  - index.md
+  - temp.md
+
+extra_meta: <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png"><link rel="manifest" href="resources/favicons/site.webmanifest"><meta property="og:image:url" content="https://mangalacharif.github.io/resources/social_media.jpg"><meta property="twitter:image" content="https://mangalacharif.github.io/resources/social_media.jpg">
+
+social:
+  name: Mangala El Charif
+  links:
+    - https://www.facebook.com/mangala.elcharif
+    - https://mangalacharif.github.io

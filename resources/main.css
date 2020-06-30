@@ -1,0 +1,39 @@
+header { display: none; }
+
+div#resume_container {
+  /* width: 70%; */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  direction: ltr;
+  overflow: scroll;
+  margin-left: -20px;
+  margin-right: -20px;
+  min-width: 70%;
+  max-width: 80%;
+  z-index: -5;
+}
+
+canvas {
+  /* margin: -100vw; */
+  /* transform: scale(0.333); */
+  width: 100%;
+  margin-bottom: -20vh;
+}
+
+@media only screen and (max-width: 980px) {
+
+  div#resume_container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0px;
+    margin-top: 50px;
+    position: relative;
+    height: auto;
+    margin-bottom: 50px;
+    padding-bottom: 20vh;
+  }
+
+}
