@@ -7,7 +7,8 @@ div#resume_container {
   top: 0;
   right: 0;
   direction: ltr;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   margin-left: -20px;
   margin-right: -20px;
   min-width: 70%;
@@ -16,10 +17,8 @@ div#resume_container {
 }
 
 canvas {
-  /* margin: -100vw; */
-  /* transform: scale(0.333); */
   width: 100%;
-  margin-bottom: -20vh;
+  margin-bottom: -10%;
 }
 
 @media only screen and (max-width: 980px) {
