@@ -350,6 +350,27 @@ div.button_container .container .button {
 
 <script>
 
+  var isMobile = {
+      Android: function() {
+          return navigator.userAgent.match(/Android/i);
+      },
+      BlackBerry: function() {
+          return navigator.userAgent.match(/BlackBerry/i);
+      },
+      iOS: function() {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      },
+      Opera: function() {
+          return navigator.userAgent.match(/Opera Mini/i);
+      },
+      Windows: function() {
+          return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+      },
+      any: function() {
+          return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+      }
+  };
+
   var old_onload = window.onload;
   window.onload = function() {
     old_onload && old_onload();
@@ -391,22 +412,33 @@ div.button_container .container .button {
 
             button.classList.add('loading');
 
-            fetch(url)
-            .then(resp => resp.blob())
-            .then(blob => {
-              const url = window.URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.style.display = 'none';
-              a.href = url;
-              // the filename you want
-              a.download = "mangala_resume.pdf";
-              document.body.appendChild(a);
-              a.click();
-              window.URL.revokeObjectURL(url);
-              document.getElementById('downloading_status_label').innerHTML = 'Downloaded';
-              document.getElementById('download_status_label').innerHTML = 'Downloaded';
-            })
-            .catch(() => alert('oh no!'));
+            if (isMobile.any()) {
+
+              window.open(url, '_blank');
+
+            } else {
+
+              fetch(url)
+              .then(resp => resp.blob())
+              .then(blob => {
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+
+                a.download = "mangala_resume.pdf";
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+
+                document.getElementById('downloading_status_label').innerHTML = 'Downloaded';
+                document.getElementById('download_status_label').innerHTML = 'Downloaded';
+
+              })
+              .catch(() => alert('oh no!'));
+
+            }
 
             setTimeout(() => {
                 svg.innerHTML = getPath(0, 0, [
