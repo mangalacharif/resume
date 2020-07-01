@@ -2,6 +2,8 @@ header { display: none; }
 
 body { background-color: #fafafa}
 
+nav { z-index: 10; }
+
 div#resume_container {
   height: 100vh;
   position: fixed;
@@ -14,7 +16,7 @@ div#resume_container {
   margin-right: -20px;
   min-width: 70%;
   max-width: 75%;
-  z-index: -5;
+  /* z-index: -5; */
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -25,6 +27,34 @@ div#resume_container::-webkit-scrollbar {
 
 canvas {
   width: 100%;
+}
+
+div.download_button {
+  /* background-color: var(--active); */
+  width: 200px;
+  position: absolute;
+  bottom: 3em;
+  left: 1em;
+}
+
+p#jump_to {
+  position: sticky;
+  top:10px;
+  background-color: #f7f7f7;
+  width: 40%;
+  margin: 0 30%;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 0.5em;
+  border-radius: 1.5em;
+  box-shadow: 0px 1px 4px #ddd;
+  transition: 0.2s ease-in-out;
+  z-index: 5;
+}
+
+p#jump_to a {
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 980px) {
