@@ -30,7 +30,6 @@ canvas {
 }
 
 div.download_button {
-  /* background-color: var(--active); */
   width: 200px;
   position: absolute;
   bottom: 3em;
@@ -52,8 +51,16 @@ p#jump_to {
   z-index: 5;
 }
 
+p#jump_to.shown {
+  transform: translateY(0px);
+}
+
+p#jump_to.hidden {
+  transform: translateY(-100px);
+}
+
 p#jump_to a {
-  margin-left: 10px;
+  margin-left: 1em;
   cursor: pointer;
 }
 
@@ -69,6 +76,18 @@ p#jump_to a {
     height: auto;
     margin-bottom: 50px;
     padding-bottom: 20vh;
+  }
+
+  p#jump_to, p#jump_to.shown, p#jump_to.hidden {
+    display: block;
+    width: 90%;
+    margin: 2em 4%;
+    font-size: 1.2em;
+    transform: translateY(0px);
+  }
+
+  p#jump_to a {
+    margin-left: 1.5em;
   }
 
 }

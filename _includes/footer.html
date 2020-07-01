@@ -20,6 +20,12 @@
   transition: box-shadow .2s ease, -webkit-transform .2s ease;
   transition: transform .2s ease, box-shadow .2s ease;
   transition: transform .2s ease, box-shadow .2s ease, -webkit-transform .2s ease;
+  cursor: pointer;
+  z-index: 11;
+  transition: 0.2s ease-in-out;
+}
+.button:hover{
+  background-color: var(--rectangle);
 }
 .button:active {
   -webkit-transform: scale(0.95);
@@ -328,6 +334,15 @@ div.button_container .container .button {
 @media (max-width: 400px) {
   div.button_container .container .button {
     margin: 12px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  div.button_container {
+    width: 80%;
+    position: relative;
+    margin-bottom: 1em;
+    margin: -5em 10% 0em 10%;
   }
 }
 
